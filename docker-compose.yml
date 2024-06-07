@@ -1,6 +1,8 @@
 services:
   web:
-    image: php:8.2-apache  # check the php version you need for your project
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"    # this line maps your pc port to the container (Apache) port
     depends_on:
